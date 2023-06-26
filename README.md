@@ -1,0 +1,1 @@
+# ai-upscaler-scripts
