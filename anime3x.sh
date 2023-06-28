@@ -16,7 +16,7 @@ do
   hh=$(ffprobe -v error -select_streams v:0 -show_entries stream=display_aspect_ratio -of default=noprint_wrappers=1:nokey=1 "$i"  | cut -d':' -f2)
   ww=$(ffprobe -v error -select_streams v:0 -show_entries stream=display_aspect_ratio -of default=noprint_wrappers=1:nokey=1 "$i"  | cut -d':' -f1)
 # DETERMINES THE PROPER SCALING WIDTH TO MAINTAIN ASPECT RATIO AT 1080P RESOLUTION
-  ws=$(echo $((1080/$hh*ww)))
+  ws=$(echo $((1080/$hh*$ww)))
 # CREATES TEMP FOLDERS FOR STORING VIDEO FRAMES
   mkdir -p tmp/in
   mkdir -p tmp/out
